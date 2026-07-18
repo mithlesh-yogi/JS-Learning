@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <ul id="images"> Images
+        <li><img style="height: 200px;" src="imges\boy.jfif" alt="" id="boy"></li>
+        <li><img  style="height: 200px;"src="imges\ballon.jfif" alt="" id="ballon"></li>
+        <li><img style="height: 200px;"src="imges\sign-board.jfif" alt="" id="sign-board"></li>
+        <li><img style="height: 200px;"src="imges\sun.jfif" alt="" id="sun"></li>
+        <li><a href="google.com"  id="google">Google</a></li>
+    </ul>
+</body>
+<script>
+    // document.getElementById('sun').onclick=function(){
+    //     alert('sun')  //not good to create scalble project
+    // }
+    //attachEvent
+        //jQuery-on
+    // document.getElementById('sun').addEventListener('click',function(){
+    //     alert('sun')
+    // },false)
+    //type,timestamp,defaultprevented,target,toElement,currentTarget,srcElement
+    //clientX,clientY,screenX,screenY
+    //altkey,crltkey,shiftkey,keycode
+    // document.getElementById('images').addEventListener('click',function(){
+    //     console.log("clicked inside the url");
+        
+    // },false) //false -bubbling mode ,true-capturing mode
+
+    // document.getElementById('sun').addEventListener('click',function(e){
+    //     console.log('clicked on the img');
+    //     e.stopPropagation()
+    // },false)
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("clicked on the google");
+        
+    // })
+
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        // console.log(e.target.parentNode)
+
+        if(e.target.tagName ==='IMG'){
+            let removeit = e.target.parentNode
+            removeit.remove()
+             // removeit.parentNode.removeChild(removeit)
+        }
+    })
+</script>
+</html>
