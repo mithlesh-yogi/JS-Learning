@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hellow Doston</h2>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function(){
+    //     console.log('mithlesh');
+    // },2000)
+
+    const saymithlesh = function(){
+        console.log('mithlesh');
+    }
+    //  const changeme = setTimeout(saymithlesh,2000)
+
+   function changetext(){
+    document.querySelector('h2').innerHTML='hellow mithlesh'
+   }
+    const temp =setTimeout(changetext,2000)
+    document.querySelector('#stop').addEventListener('click',function(){
+            clearTimeout(temp)
+            console.log('stopped');
+            
+    })
+</script>
+</html>
