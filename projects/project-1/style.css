@@ -1,0 +1,37 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'roboto';
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+}
+.buttons{
+    display: flex;
+    gap: 10px;
+}
+.buttons .button{
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+#grey{
+    background-color: grey;
+}
+#red{
+    background-color: red;
+}
+#blue{
+    background-color: blue;
+}
+#purple{
+    background-color: purple;
+}
