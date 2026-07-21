@@ -1,0 +1,26 @@
+*{
+   padding: 0;
+   margin: 0;
+}
+body{
+   background-color: #212121;
+   /* font-family: Arial, sans-serif; */
+   height: 100vh;
+   width: 100vw;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.time p{
+    color: #fff;
+    font-size: 14px;
+    padding: 5px;
+}
+.banner{
+    width: 55px;
+    height: 20px;
+    padding: 5px 30px;
+    background-color:rgb(221, 175, 47);
+    border-radius: 5px;
+}
