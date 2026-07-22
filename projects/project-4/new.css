@@ -1,0 +1,954 @@
+/* ===========================
+   GOOGLE RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Baloo 2',cursive;
+    overflow-x:hidden;
+    min-height:100vh;
+
+    background:linear-gradient(
+        180deg,
+        #6ec5ff 0%,
+        #8ed8ff 30%,
+        #9ae1ff 60%,
+        #9ee78a 100%
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+/* ===========================
+   DECORATION IMAGES
+=========================== */
+
+/* .sun{
+    position:absolute;
+    top:20px;
+    left:40px;
+    width:120px;
+}
+
+.cloud{
+    position:absolute;
+    width:180px;
+}
+
+.cloud-left{
+    top:100px;
+    left:0;
+}
+
+.cloud-right{
+    top:120px;
+    right:20px;
+}
+
+.boy{
+    position:absolute;
+    left:40px;
+    bottom:40px;
+    width:240px;
+}
+
+.balloon{
+    position:absolute;
+    top:70px;
+    right:80px;
+    width:120px;
+}
+
+.signboard{
+    position:absolute;
+    right:40px;
+    bottom:40px;
+    width:220px;
+}  */
+
+/* ===========================
+   MAIN CARD
+=========================== */
+
+.game-card{
+
+    width:700px;
+    max-width:90%;
+
+    background:rgba(255,255,255,.35);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:35px;
+
+    padding:35px;
+
+    border:2px solid rgba(255,255,255,.5);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.18);
+
+}
+
+/* ===========================
+   HEADING
+=========================== */
+
+.heading{
+
+    text-align:center;
+
+}
+
+.heading h1{
+
+    font-size:52px;
+
+    font-weight:800;
+
+    line-height:1.1;
+
+}
+
+.blue{
+
+    color:#2196f3;
+
+}
+
+.green{
+
+    color:#1fbf65;
+
+}
+
+.purple{
+
+    color:#8a4fff;
+
+}
+
+.heading p{
+
+    margin-top:15px;
+
+    font-size:22px;
+
+    color:#444;
+
+}
+
+.heading p span{
+
+    color:#ff5722;
+
+    font-weight:bold;
+
+}
+
+.heading h3{
+
+    margin-top:12px;
+
+    font-size:26px;
+
+    color:#444;
+
+}
+
+.heading h3 span{
+
+    color:#ff9800;
+
+}
+
+/* ===========================
+   GUESS BOX
+=========================== */
+
+.guess-box{
+
+    margin-top:30px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.guess-box h2{
+
+    text-align:center;
+
+    font-size:30px;
+
+    margin-bottom:20px;
+
+    color:#444;
+
+}
+
+/* ===========================
+   INPUT
+=========================== */
+
+.input-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    border:2px solid #d8d8d8;
+
+    border-radius:18px;
+
+    padding:15px;
+
+    transition:.3s;
+
+}
+
+.input-box:hover{
+
+    border-color:#00bcd4;
+
+}
+
+.input-box i{
+
+    font-size:28px;
+
+    color:#ff9800;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    font-size:20px;
+
+    font-family:inherit;
+
+    background:none;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.submit-btn{
+
+    width:100%;
+
+    margin-top:25px;
+
+    border:none;
+
+    outline:none;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:white;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+    90deg,
+    #5d9cff,
+    #6d72ff
+    );
+
+    transition:.35s;
+
+}
+
+.submit-btn i{
+
+    margin-right:8px;
+
+}
+
+.submit-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(70,120,255,.4);
+
+}
+
+/* ===========================
+   STATUS BOX
+=========================== */
+
+.status-box{
+
+    background:rgb(244, 242, 206);
+    border-radius:25px;
+    padding:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-top: 10px;
+
+}
+
+.status-box hr{
+
+    margin:14px 0;
+    border:none;
+    border-top:1px solid #eee;
+
+}
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom: 10px;
+    /* border-bottom: 1px solid brown; */
+
+}
+
+.left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.left i{
+
+    font-size:24px;
+
+    color:#2196f3;
+
+}
+
+.left span{
+
+    font-size:22px;
+
+    color:#444;
+
+    font-weight:600;
+
+}
+.guesses{
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    max-width: 200px;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 5px;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-right: 10px;
+    flex-wrap: nowrap;
+}
+.guesses::-webkit-scrollbar{
+    height: 5px;
+}
+.guesses::-webkit-scrollbar-thumb{
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+.guess-design{
+    color:#666;
+    font-size:20px;
+    /* border: 1px solid black; */
+    /* padding: 2px 8px; */
+    padding: 4px;
+    height: 40px;
+    width: 40px;
+    /* width: 23%; */
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    flex-shrink: 0;
+}
+
+.attempts{
+    background:#ff9800;
+    color:white;
+    width:50px;
+    height:50px;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    font-weight:bold;
+    /* border: 1px solid brown; */
+
+}
+
+.message{
+
+    color:#1fbf65;
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+#newgame{
+    text-align: center;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: w;
+    /* width: 300px; */
+}
+#newgame:hover{
+    /* border: 2px solid blue; */
+    background-color: #2196f3;
+    transform:translateY(-4px) scale(1.02);
+}
+/* ==========================================
+   PART 3 : ANIMATIONS & RESPONSIVE DESIGN
+==========================================*/
+
+/* Smooth scrolling */
+html{
+    scroll-behavior:smooth;
+}
+
+/* Smooth transition for all elements */
+*{
+    transition:0.3s ease;
+}
+
+/* ===============================
+   FLOATING ANIMATIONS
+================================*/
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+@keyframes floatSlow{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-25px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes rotateSun{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+.sun{
+    animation:rotateSun 35s linear infinite;
+}
+
+.balloon{
+    animation:float 5s ease-in-out infinite;
+}
+
+.cloud-left{
+    animation:floatSlow 8s ease-in-out infinite;
+}
+
+.cloud-right{
+    animation:float 7s ease-in-out infinite;
+}
+
+.boy{
+    animation:floatSlow 6s ease-in-out infinite;
+}
+
+.signboard{
+    animation:float 6s ease-in-out infinite;
+}
+
+/* ===============================
+   CARD HOVER
+================================*/
+
+.game-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.25);
+
+}
+
+/* ===============================
+   GLASS SHINE EFFECT
+================================*/
+
+.game-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.game-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-40%;
+
+    width:80%;
+
+    height:250%;
+
+    background:rgba(255,255,255,.18);
+
+    transform:rotate(25deg);
+
+    transition:1s;
+
+}
+
+.game-card:hover::before{
+
+    left:130%;
+
+}
+
+/* ===============================
+   TITLE ANIMATION
+================================*/
+
+.heading h1 span{
+
+    display:inline-block;
+
+    animation:bounce 2s infinite;
+
+}
+
+.heading h1 span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.heading h1 span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+/* ===============================
+   INPUT EFFECT
+================================*/
+
+.input-box:focus-within{
+
+    border-color:#4a7dff;
+
+    box-shadow:0 0 15px rgba(74,125,255,.25);
+
+}
+
+/* ===============================
+   BUTTON EFFECT
+================================*/
+
+.submit-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.submit-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:30px;
+
+    height:250px;
+
+    background:rgba(255,255,255,.45);
+
+    top:-80px;
+
+    left:-80px;
+
+    transform:rotate(30deg);
+
+}
+
+.submit-btn:hover::before{
+
+    left:130%;
+
+    transition:1s;
+
+}
+
+.submit-btn:hover{
+
+    transform:translateY(-4px) scale(1.02);
+
+}
+
+.submit-btn:active{
+
+    transform:scale(.96);
+
+}
+
+/* ===============================
+   STATUS ITEMS
+================================*/
+
+/* .item:hover{
+
+    transform:translateX(8px);
+
+} */
+
+.attempt{
+
+    transition:.3s;
+
+}
+
+.attempt:hover{
+
+    transform:scale(1.15) rotate(10deg);
+
+}
+
+/* ===============================
+   INPUT PLACEHOLDER
+================================*/
+
+input::placeholder{
+
+    color:#999;
+
+}
+
+/* ===============================
+   MOBILE
+================================*/
+
+@media(max-width:992px){
+
+    .game-card{
+
+        width:90%;
+        padding:25px;
+
+    }
+
+    .heading h1{
+
+        font-size:42px;
+
+    }
+
+    .heading p{
+
+        font-size:18px;
+
+    }
+
+    .heading h3{
+
+        font-size:22px;
+
+    }
+
+    .boy{
+
+        width:170px;
+        left:10px;
+
+    }
+
+    .signboard{
+
+        width:170px;
+
+    }
+
+}
+
+/* ===============================
+   TABLET
+================================*/
+
+@media(max-width:768px){
+
+    body{
+
+        padding:30px 15px;
+
+    }
+
+    .game-card{
+
+        width:100%;
+
+        padding:20px;
+
+    }
+
+    .heading h1{
+
+        font-size:36px;
+
+    }
+
+    .guess-box{
+
+        padding:18px;
+
+    }
+
+    .status-box{
+
+        padding:18px;
+
+    }
+
+    .left span{
+
+        font-size:18px;
+
+    }
+
+    .guesses{
+
+        font-size:17px;
+
+    }
+
+    .message{
+
+        font-size:17px;
+
+    }
+
+    .attempt{
+
+        width:42px;
+        height:42px;
+
+        font-size:18px;
+
+    }
+
+    .boy{
+
+        display:none;
+
+    }
+
+    .signboard{
+
+        display:none;
+
+    }
+
+}
+
+/* ===============================
+   MOBILE
+================================*/
+
+@media(max-width:500px){
+
+    .sun{
+
+        width:70px;
+
+        left:10px;
+
+        top:10px;
+
+    }
+
+    .balloon{
+
+        width:60px;
+
+        right:10px;
+
+    }
+
+    .cloud{
+
+        width:90px;
+
+    }
+
+    .heading h1{
+
+        font-size:30px;
+
+    }
+
+    .heading p{
+
+        font-size:16px;
+
+    }
+
+    .heading h3{
+
+        font-size:18px;
+
+    }
+
+    .guess-box h2{
+
+        font-size:24px;
+
+    }
+
+    .input-box{
+
+        padding:12px;
+
+    }
+
+    .input-box input{
+
+        font-size:17px;
+
+    }
+
+    .submit-btn{
+
+        font-size:18px;
+
+        padding:15px;
+
+    }
+
+    .item{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+
+    }
+
+    .attempt{
+
+        align-self:flex-end;
+
+    }
+
+}
+
+/* ===============================
+   CUSTOM SCROLLBAR
+================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#4a7dff;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#dbefff;
+
+}

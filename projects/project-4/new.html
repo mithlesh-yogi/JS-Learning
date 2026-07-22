@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="new.css">
+</head>
+
+<body>
+
+
+    <section class="game-card">
+
+        <!-- Heading -->
+        <div class="heading">
+            <h1>
+                <span class="blue">Number</span>
+                <span class="green">Guessing</span>
+                <span class="purple">Game</span>
+            </h1>
+            <p>
+                Try to guess the random number between
+                <span>1</span> and <span>100</span>.
+            </p>
+            <h3>
+                You have <span>10</span> attempts to guess it!
+            </h3>
+        </div>
+        <!-- Guess Box -->
+        <div class="guess-box">
+            <h2>Guess a Number</h2>
+            <div class="input-box">
+                <i class="fa-solid fa-circle-question"></i>
+                <input id="guess" placeholder="Enter a number (1 - 100)">
+            </div>
+            <button class="submit-btn" id="submit">
+                <i class="fa-solid fa-paper-plane"></i>
+                Submit Guess
+            </button>
+
+        </div>
+
+        <!-- Status -->
+
+        <div class="status-box" id="results">
+
+            <div class="item">
+                <div class="left">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <span>Previous Guesses</span>
+                </div>
+                <div class="guesses">
+
+                </div>
+            </div>
+            <hr>
+            <div class="item">
+                <div class="left">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <span>Attempts Left</span>
+                </div>
+                <div class="attempts">
+                    10
+                </div>
+            </div>
+            <hr>
+            <div class="item">
+                <div class="left">
+                    <i class="fa-solid fa-comment-dots"></i>
+                    <span>Message</span>
+                </div>
+                <div class="message">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="main.js"></script>
+
+</html>
