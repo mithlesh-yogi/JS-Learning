@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(15, 1, 1);
+}
+.cards{
+        display: flex;
+        padding: 50px 5%;
+        /* justify-content: space-between; */
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+}
+.card{
+    height: 600px;
+    width: 330px;
+    background-color: rgb(67, 63, 63);
+    border-radius: 20px;
+}
+.card img{
+    height: 70%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+}
+.card .product-title{
+    color: rgb(202, 195, 195);
+    font-weight: 600;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    padding: 0px 10px 5px 10px;
+    margin-top: -10px;
+}
+.descrip{
+    font-size: 1rem;
+    padding: 0px 0px 5px 10px;
+    color: rgba(255, 255, 255, 0.626);
+}
+.size-box{
+    display: flex;
+    align-items: center;
+}
+.size-text{
+    color: aliceblue;
+    padding: 0px 10px;
+    font-size: 16px;
+}
+.size{
+    color: aliceblue;
+    background-color: rgb(50, 47, 47);
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.price{
+    display: flex;
+    padding: 5px 10px;
+    align-items: center;
+    justify-content: space-between;
+    /* padding-bottom:15px; */
+
+}
+.price p{
+    font-size: 1.3rem;
+    color: whitesmoke;
+}
+.price button{
+    height: 35px;
+    width: 70px;
+    margin-right: 10px;
+    color: whitesmoke;
+    background-color: black;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}

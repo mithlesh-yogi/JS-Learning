@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0px;
+        margin: 0px;
+    }
+    .card{
+        height: 200px;
+        width: 200px;
+        position: relative;
+        overflow: hidden;
+        
+    }
+    .card img{
+        height: 100%;
+        width: 100%;
+    }
+    .follower{
+        padding: 0px  10px 5px 10px;
+        font-size: 20px;
+        position: absolute;
+        bottom: 0px;
+        width: 90%;
+        color: white;
+        background: rgba(105, 104, 104, 0);
+        transform: translateY(100%);
+}
+.card:hover .follower{
+    transform: translate(0%);
+    transition: all 0.3s ease-in-out;
+}
+</style>
+<body style="background-color:black;">
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    const img = document.createElement('img')
+    const p = document.createElement('p')
+
+    div.classList.add("card")
+    console.log(div);
+    p.classList.add("follower")
+    
+    const requesturl = 'https://api.github.com/users/mithlesh-yogi'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',requesturl)
+    // console.log("here");
+    xhr.onreadystatechange =function(){
+        if (xhr.readyState===4) {
+              const data = JSON.parse(this.responseText)
+              console.log(typeof(data));
+              img.src ="https://avatars.githubusercontent.com/u/292866654?v=4"
+              img.alt ="avatar"
+              p.innerHTML =`Followers:${data.followers}`
+        }  
+    }
+    div.appendChild(img)
+    div.appendChild(p)
+    document.body.appendChild(div)
+    xhr.send()
+</script>
+</html>
