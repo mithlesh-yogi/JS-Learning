@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+   <button id="orange">Orange</button> 
+   <button id="green">Green</button>
+</body>
+<script>
+
+    //lexial scoping
+    function parent(){
+        let name1 = "mithlesh"
+
+        function child1(){
+            let name2 = "mith" 
+            console.log(name1);
+        }
+        child1()
+        // console.log(name2);  
+        function child2(){
+            console.log(name1);
+            // console.log(name2); 
+        }
+        child2()
+    }
+    parent()
+    // child1()
+
+    // closure
+    function makefun(){
+        const name ="mozila"
+
+        function displayname(){
+            console.log(name);
+        }
+
+        return displayname
+    }
+    const myfun = makefun()
+    myfun()
+</script>
+<script>
+    //usecase of the clouser
+//    document.querySelector('#orange').onclick = function(){
+//     document.body.style.backgroundColor = "orange"
+//    }
+//    document.querySelector('#green').onclick = function(){
+//     document.body.style.backgroundColor = "green"
+//    }
+
+function clickhandler(color){
+
+    return function(){
+        document.body.style.backgroundColor = `${color}`
+    }
+    
+}
+
+document.querySelector('#orange').onclick = clickhandler("orange")
+document.querySelector('#green').onclick = clickhandler("green")
+
+</script>
+</html>
