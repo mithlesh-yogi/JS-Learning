@@ -8,3 +8,10 @@ for (let i = 1; i < arr.length; i++) {
 }
 let maximum_value = maxvalue;
 console.log(maximum_value);
+
+const heros =['spiderman','superman','ironman']
+
+heros.forEach((value)=>{
+    console.log(value);
+    
+})
